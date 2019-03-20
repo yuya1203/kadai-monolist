@@ -23,7 +23,7 @@
                 </div>
                 <div class="panel-body">
                     <% @want_users.each do |user| %>
-                        <%= link_to username, user_path(user) %>
+                        <%= link_to user.name, user_path(user) %>
                     <% end %>
                 </div>
             </div>
@@ -31,12 +31,15 @@
         <div class="have-users">
             <div class="panel panel-default">
                 <div class="panel-heading text-center">
-                    HAVEしたユーザー
+                    Haveしたユーザー
                 </div>
                 <div class="panel-body">
+                    <% @have_users.each do |user| %>
+                        <%= link_to user.name, user_path(user) %>
+                    <% end %>
                 </div>
             </div>
         </div>
-        <p class="text-center"><%= link_to '楽天詳細ページ', @item.url, target: '_blanc' %></p>
+        <p class="text-center"><%= link_to '楽天詳細ページ', @item.url, target: '_blank' %></p>
     </div>
 </div>
